@@ -9,7 +9,7 @@
    <children>
       <ImageView fitHeight="469.0" fitWidth="730.0" layoutX="1.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../../../../Downloads/interface.png" />
+            <Image url="@../../Images/interface.png" />
          </image>
       </ImageView>
       <ImageView fx:id="cameraFrame" fitHeight="234.0" fitWidth="394.0" layoutX="186.0" layoutY="129.0" pickOnBounds="true" smooth="false" />
