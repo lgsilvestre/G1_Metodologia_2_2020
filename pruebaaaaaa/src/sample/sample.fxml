@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="500.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <children>
+      <ImageView fx:id="cameraFrame" fitHeight="343.0" fitWidth="495.0" layoutX="53.0" layoutY="57.0" pickOnBounds="true" smooth="false" />
+      <AnchorPane layoutX="244.0" layoutY="433.0" prefHeight="26.0" prefWidth="108.0" style="-fx-background-color: black;">
+         <children>
+            <Button fx:id="prender" mnemonicParsing="false" onAction="#stopCamera" prefHeight="26.0" prefWidth="54.0" style="-fx-background-color: red;" text="ON" visible="false" />
+            <Button fx:id="apagar" layoutX="54.0" mnemonicParsing="false" onAction="#prender" prefHeight="26.0" prefWidth="54.0" style="-fx-background-color: RED;" text="OFF" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
