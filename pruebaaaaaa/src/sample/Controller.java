@@ -20,6 +20,8 @@ public class Controller {
     private Button prender;
     @FXML
     private Button apagar;
+    @FXML
+    private ImageView background;
     
     @FXML
     protected void prender(ActionEvent event){
