@@ -22,6 +22,8 @@ public class Controller {
     private Button apagar;
     @FXML
     private ImageView background;
+    @FXML
+    private Button TakePicture;
     
     @FXML
     protected void prender(ActionEvent event){
@@ -38,6 +40,16 @@ public class Controller {
             cameraFrame.setVisible(false);
             apagar.setVisible(true);
             prender.setVisible(false);
+        }
+    }
+
+    @FXML
+    private void takePicture(ActionEvent event) {
+        if(webCamCapture != null){
+            webCamCapture.stop();
+            prender.setVisible(false);
+            apagar.setVisible(true);
+            
         }
     }
     

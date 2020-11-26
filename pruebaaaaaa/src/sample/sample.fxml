@@ -19,5 +19,6 @@
             <Button fx:id="apagar" layoutX="54.0" mnemonicParsing="false" onAction="#prender" prefHeight="26.0" prefWidth="54.0" style="-fx-background-color: RED;" text="OFF" />
          </children>
       </AnchorPane>
+      <Button fx:id="TakePicture" layoutX="606.0" layoutY="467.0" mnemonicParsing="false" onAction="#takePicture" opacity="0.0" prefHeight="25.0" prefWidth="172.0" text="Button" />
    </children>
 </AnchorPane>
