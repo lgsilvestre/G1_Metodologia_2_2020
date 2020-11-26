@@ -5,15 +5,15 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="470.0" prefWidth="731.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+<AnchorPane prefHeight="584.0" prefWidth="980.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
    <children>
-      <ImageView fx:id="background" fitHeight="469.0" fitWidth="730.0" layoutX="1.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="background" fitHeight="583.0" fitWidth="979.0" layoutX="1.0" layoutY="3.0" pickOnBounds="true">
          <image>
-            <Image url="@../../Images/interface.png" />
+            <Image url="@../Images/interface.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="cameraFrame" fitHeight="234.0" fitWidth="394.0" layoutX="186.0" layoutY="129.0" pickOnBounds="true" smooth="false" />
-      <AnchorPane layoutX="185.0" layoutY="374.0" prefHeight="26.0" prefWidth="108.0" style="-fx-background-color: black;">
+      <ImageView fx:id="cameraFrame" fitHeight="290.0" fitWidth="526.0" layoutX="252.0" layoutY="163.0" pickOnBounds="true" smooth="false" />
+      <AnchorPane layoutX="252.0" layoutY="466.0" prefHeight="26.0" prefWidth="108.0" style="-fx-background-color: black;">
          <children>
             <Button fx:id="prender" mnemonicParsing="false" onAction="#stopCamera" prefHeight="26.0" prefWidth="54.0" style="-fx-background-color: red;" text="ON" visible="false" />
             <Button fx:id="apagar" layoutX="54.0" mnemonicParsing="false" onAction="#prender" prefHeight="26.0" prefWidth="54.0" style="-fx-background-color: RED;" text="OFF" />
