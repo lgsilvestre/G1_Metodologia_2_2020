@@ -13,6 +13,10 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
+import org.opencv.core.Mat;
+import org.opencv.core.Point;
+import org.opencv.core.Scalar;
+import org.opencv.imgproc.Imgproc;
 
 public class Controller {
     private WebCamCapture webCamCapture;
@@ -28,7 +32,10 @@ public class Controller {
     private Button TakePicture;
     
     static ImageView imagenCapturada;
-
+    
+    @FXML
+    private Button aplicarPatron;
+    
     public static ImageView getImagenCapturada() {
         return imagenCapturada;
     }
@@ -86,12 +93,29 @@ public class Controller {
             });
         }
     }
+
+    @FXML
+    private void aplicarPatron(ActionEvent event) {
+        
+        
+    }
     
-    
-    
-    
-    
-    
-    
+    private void drawAxis(Mat img, Point p_, Point q_, Scalar colour, float scale) {
+        Point p = new Point(p_.x, p_.y);
+        Point q = new Point(q_.x, q_.y);
+        double angle = Math.atan2(p.y - q.y, p.x - q.x); // Angulo en radianes
+        double hypotenuse = Math.sqrt((p.y - q.y) * (p.y - q.y) + (p.x - q.x) * (p.x - q.x));
+        // Aquí alargamos la flecha en un factor de escala
+        q.x = (int) (p.x - scale * hypotenuse * Math.cos(angle));
+        q.y = (int) (p.y - scale * hypotenuse * Math.sin(angle));
+        Imgproc.line(img, p, q, colour, 1, Imgproc.LINE_AA, 0);
+        // Se crean las anclas de la flechas
+        p.x = (int) (q.x + 9 * Math.cos(angle + Math.PI / 4));
+        p.y = (int) (q.y + 9 * Math.sin(angle + Math.PI / 4));
+        Imgproc.line(img, p, q, colour, 1, Imgproc.LINE_AA, 0);
+        p.x = (int) (q.x + 9 * Math.cos(angle - Math.PI / 4));
+        p.y = (int) (q.y + 9 * Math.sin(angle - Math.PI / 4));
+        Imgproc.line(img, p, q, colour, 1, Imgproc.LINE_AA, 0);
+    }
     
 }
