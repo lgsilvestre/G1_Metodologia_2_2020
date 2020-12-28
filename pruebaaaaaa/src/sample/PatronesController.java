@@ -60,21 +60,21 @@ public class PatronesController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
         
-//        BufferedImage imagenTemporal;
-//        
-//        File fotoPersona = new File("fotoTest.png");
-//        try {
-//            imagenTemporal = ImageIO.read(fotoPersona);
-//            fotoCara = SwingFXUtils.toFXImage(imagenTemporal, null);
-//            
-//            System.out.println("Se ha leido la fotografia");
-//        } catch (IOException ex) {
-//            Logger.getLogger(PatronesController.class.getName()).log(Level.SEVERE, null, ex);
-//            System.out.println("No se ha leido la imagen");
-//        }
-//        
+        BufferedImage imagenTemporal;
         
-//        caraPersona.setImage(fotoCara);
+        File fotoPersona = new File("fotoTest.png");
+        try {
+            imagenTemporal = ImageIO.read(fotoPersona);
+            fotoCara = SwingFXUtils.toFXImage(imagenTemporal, null);
+            
+            System.out.println("Se ha leido la fotografia");
+        } catch (IOException ex) {
+            Logger.getLogger(PatronesController.class.getName()).log(Level.SEVERE, null, ex);
+            System.out.println("No se ha leido la imagen");
+        }
+        
+        
+        caraPersona.setImage(fotoCara);
         caraPersona.setVisible(false);
     }    
 
