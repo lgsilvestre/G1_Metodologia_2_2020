@@ -20,5 +20,6 @@
          </children>
       </AnchorPane>
       <Button fx:id="TakePicture" layoutX="606.0" layoutY="467.0" mnemonicParsing="false" onAction="#takePicture" opacity="0.0" prefHeight="25.0" prefWidth="172.0" text="Button" />
+      <Button fx:id="aplicarPatron" layoutX="606.0" layoutY="497.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#aplicarPatron" opacity="0.0" prefHeight="24.0" prefWidth="172.0" style="-fx-background-color: black;" text="Aplicar Patron" textFill="WHITE" />
    </children>
 </AnchorPane>
