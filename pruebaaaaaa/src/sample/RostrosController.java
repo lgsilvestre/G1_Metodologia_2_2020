@@ -98,7 +98,69 @@ public class RostrosController implements Initializable{
     
     @FXML
     private void guardarFotografia(ActionEvent event) throws IOException {
-        
-        
+        if(!nombrePersona.getText().equals("")){
+            if(!descripcion.getText().equals("")){
+                if(!fechaNacimiento.getText().equals("")){
+                    if(!sexo.getText().equals("")){
+                        File archivo = new File("personas.json");
+                        if(archivo.exists()){
+                            System.out.println("existe");
+                            //leer archivo y setearlo en personas de guardadojson
+                            guardadoGson guardado = new guardadoGson();
+                            guardado.leerJson();
+                            setPersonas(guardado.getPersonas());
+                            
+                            contador=personas.size()+1;
+                            Persona persona = new Persona(nombrePersona.getText(),descripcion.getText(),fechaNacimiento.getText(),sexo.getText(),contador);
+                            personas.add(persona);
+                        
+                            guardado.setPersonas(personas);
+                            guardado.crearGson();
+
+                            String nombreImagen=String.valueOf(contador)+".png";
+                            File fotoPersona = new File(nombreImagen);
+                            String formato="png";
+                            BufferedImage imagen = SwingFXUtils.fromFXImage(imagenUsuario.getImage(), null);
+
+                            ImageIO.write(imagen, formato, fotoPersona);
+
+                            contador+=1;
+                            
+//                            for (Persona persona1 : personas) {
+//                                persona1.mostrarPersona();
+//                            }
+                            
+                            System.out.println(contador);
+                            resetearTextos();
+                            
+                            cambioEscena("sample.fxml");
+
+                            
+                        }
+                        else{
+                            System.out.println("No existe, Creamos el archivo");
+                            Persona persona = new Persona(nombrePersona.getText(),descripcion.getText(),fechaNacimiento.getText(),sexo.getText(),contador);
+                            personas.add(persona);
+                        
+                            guardadoGson guardado = new guardadoGson();
+                            guardado.setPersonas(personas);
+                            guardado.crearGson();
+                        
+                            String nombreImagen=String.valueOf(contador)+".png";
+                            File fotoPersona = new File(nombreImagen);
+                            String formato="png";
+                            BufferedImage imagen = SwingFXUtils.fromFXImage(imagenUsuario.getImage(), null);
+                        
+                            ImageIO.write(imagen, formato, fotoPersona);
+                       
+                            contador+=1;
+                            
+                            resetearTextos();
+                            cambioEscena("sample.fxml");
+                        }
+                    }
+                }
+            }
+        }
     }
 }
