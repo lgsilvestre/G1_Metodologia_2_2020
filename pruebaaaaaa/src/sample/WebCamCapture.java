@@ -30,6 +30,10 @@ public class WebCamCapture {
         timer.scheduleAtFixedRate(frameGrabber, 0, 33, TimeUnit.MILLISECONDS);
     }
 
+    WebCamCapture() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
     private void getFrame(){
         if (capture.isOpened()){
             Mat frame = new Mat();

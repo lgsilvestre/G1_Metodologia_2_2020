@@ -27,7 +27,6 @@ import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
 import javax.imageio.ImageIO;
-import sample.Controller;
 
 public class RostrosController implements Initializable{
 
@@ -46,6 +45,10 @@ public class RostrosController implements Initializable{
     
     ArrayList<Persona> personas = new ArrayList<>();
     int contador=1;
+    @FXML
+    private Button botonSalir;
+    @FXML
+    private Button botonInicio;
     
     public void setPersonas(ArrayList<Persona> personas) {
         this.personas = personas;
@@ -163,4 +166,19 @@ public class RostrosController implements Initializable{
             }
         }
     }
+
+    @FXML
+    private void salir(ActionEvent event) {
+        Stage stage = (Stage) this.botonSalir.getScene().getWindow();
+        stage.close();
+        System.exit(0);
+    }
+    
+
+    @FXML
+    private void irInicio(ActionEvent event) throws IOException {
+        cambioEscena("sample.fxml");
+    }
+    
+    
 }

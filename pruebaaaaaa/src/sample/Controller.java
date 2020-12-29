@@ -31,7 +31,7 @@ import org.opencv.imgcodecs.Imgcodecs;
 import org.opencv.imgproc.Imgproc;
 
 public class Controller {
-    private WebCamCapture webCamCapture;
+    public WebCamCapture webCamCapture;
     @FXML
     private ImageView cameraFrame;
     @FXML
@@ -65,6 +65,8 @@ public class Controller {
     public static void setImagenCapturada(ImageView imagenCapturada) {
         Controller.imagenCapturada = imagenCapturada;
     }
+    @FXML
+    private Button botonSalir;
     
     
     @FXML
@@ -84,6 +86,7 @@ public class Controller {
             prender.setVisible(false);
         }
     }
+    
 
     @FXML
     private void takePicture(ActionEvent event) throws IOException {
@@ -258,6 +261,13 @@ public class Controller {
         //HighGui.waitKey();
         //System.exit(0);
         
+    }
+
+    @FXML
+    private void salir(ActionEvent event) {
+        Stage stage = (Stage) this.botonSalir.getScene().getWindow();
+        stage.close();
+        System.exit(0);
     }
     
 }
