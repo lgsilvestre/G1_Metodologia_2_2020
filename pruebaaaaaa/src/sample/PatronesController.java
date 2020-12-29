@@ -31,8 +31,15 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javafx.application.Platform;
 import javafx.embed.swing.SwingFXUtils;
+import javafx.event.EventHandler;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.image.Image;
+import javafx.stage.Stage;
+import javafx.stage.WindowEvent;
 import javax.imageio.ImageIO;
 import org.opencv.core.Core;
 import org.opencv.core.CvType;
@@ -52,6 +59,10 @@ public class PatronesController implements Initializable {
     @FXML
     private ImageView caraPersona;
     Image fotoCara;
+    @FXML
+    private Button botonInicio;
+    @FXML
+    private Button botonSalir;
 
     /**
      * Initializes the controller class.
@@ -83,6 +94,38 @@ public class PatronesController implements Initializable {
         
       caraPersona.setVisible(true);
       
+    }
+
+    @FXML
+    private void irInicio(ActionEvent event) throws IOException {
+        cambioEscena("sample.fxml");
+       
+    }
+    
+    public void cambioEscena(String nombreFxml) throws IOException{
+        Stage stage2 = (Stage) this.botonInicio.getScene().getWindow();
+        stage2.close();
+        Stage stage = new Stage();
+        Parent root2 = FXMLLoader.load(getClass().getResource(nombreFxml));
+        Scene scene = new Scene(root2);
+
+        stage.setScene(scene);
+        stage.show();
+        
+        stage.setOnCloseRequest(new EventHandler<WindowEvent>() {
+            @Override
+            public void handle(WindowEvent t) {
+                Platform.exit();
+                System.exit(0);
+            }
+        });
+    }
+
+    @FXML
+    private void salir(ActionEvent event) {
+        Stage stage = (Stage) this.botonSalir.getScene().getWindow();
+        stage.close();
+        System.exit(0);
     }
    
 }

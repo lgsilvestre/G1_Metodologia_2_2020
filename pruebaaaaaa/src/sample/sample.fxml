@@ -5,7 +5,7 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="584.0" prefWidth="980.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+<AnchorPane prefHeight="584.0" prefWidth="980.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
    <children>
       <ImageView fx:id="background" fitHeight="583.0" fitWidth="979.0" layoutX="1.0" layoutY="3.0" pickOnBounds="true">
          <image>
@@ -21,5 +21,6 @@
       </AnchorPane>
       <Button fx:id="TakePicture" layoutX="606.0" layoutY="467.0" mnemonicParsing="false" onAction="#takePicture" opacity="0.0" prefHeight="25.0" prefWidth="172.0" text="Button" />
       <Button fx:id="aplicarPatron" layoutX="606.0" layoutY="497.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#aplicarPatron" opacity="0.0" prefHeight="24.0" prefWidth="172.0" style="-fx-background-color: black;" text="Aplicar Patron" textFill="WHITE" />
+      <Button fx:id="botonSalir" layoutX="892.0" layoutY="31.0" mnemonicParsing="false" onAction="#salir" opacity="0.0" prefHeight="25.0" prefWidth="62.0" text="Button" />
    </children>
 </AnchorPane>
