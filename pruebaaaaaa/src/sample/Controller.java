@@ -1,6 +1,4 @@
 package sample;
-
-
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
@@ -29,7 +27,9 @@ import org.opencv.core.Scalar;
 import org.opencv.highgui.HighGui;
 import org.opencv.imgcodecs.Imgcodecs;
 import org.opencv.imgproc.Imgproc;
-
+import ayuda.AyudaSoporteController;
+        
+        
 public class Controller {
     public WebCamCapture webCamCapture;
     @FXML
@@ -46,17 +46,15 @@ public class Controller {
     static ImageView imagenCapturada;
     
     static ImageView fotoPersonaAux;
-
-    public static ImageView getFotoPersonaAux() {
-        return fotoPersonaAux;
-    }
-
-    public static void setFotoPersonaAux(ImageView fotoPersonaAux) {
-        Controller.fotoPersonaAux = fotoPersonaAux;
-    }
     
     @FXML
     private Button aplicarPatron;
+    
+    @FXML
+    private Button botonSalir;
+    
+    @FXML
+    private Button ayudaSoporte;
     
     public static ImageView getImagenCapturada() {
         return imagenCapturada;
@@ -65,9 +63,14 @@ public class Controller {
     public static void setImagenCapturada(ImageView imagenCapturada) {
         Controller.imagenCapturada = imagenCapturada;
     }
-    @FXML
-    private Button botonSalir;
     
+    public static ImageView getFotoPersonaAux() {
+        return fotoPersonaAux;
+    }
+
+    public static void setFotoPersonaAux(ImageView fotoPersonaAux) {
+        Controller.fotoPersonaAux = fotoPersonaAux;
+    }
     
     @FXML
     protected void prender(ActionEvent event){
@@ -268,6 +271,31 @@ public class Controller {
         Stage stage = (Stage) this.botonSalir.getScene().getWindow();
         stage.close();
         System.exit(0);
+    }
+
+    @FXML
+    private void abrirAyuda(ActionEvent event) throws IOException {
+        cambioEscena("AyudaSoporte.fxml");
+        
+    }
+    
+    public void cambioEscena(String nombreFxml) throws IOException{
+        Stage stage2 = (Stage) this.ayudaSoporte.getScene().getWindow();
+        stage2.close();
+        Stage stage = new Stage();
+        Parent root2 = FXMLLoader.load(getClass().getResource(nombreFxml));
+        Scene scene = new Scene(root2);
+
+        stage.setScene(scene);
+        stage.show();
+        
+        stage.setOnCloseRequest(new EventHandler<WindowEvent>() {
+            @Override
+            public void handle(WindowEvent t) {
+                Platform.exit();
+                System.exit(0);
+            }
+        });
     }
     
 }

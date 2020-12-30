@@ -1,4 +1,4 @@
-package sample;
+package camara;
 
 import javafx.application.Platform;
 import javafx.scene.image.Image;
@@ -31,7 +31,7 @@ public class WebCamCapture {
     }
 
     WebCamCapture() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        throw new UnsupportedOperationException("Not supported yet."); 
     }
 
     private void getFrame(){
@@ -48,7 +48,7 @@ public class WebCamCapture {
         Imgcodecs.imencode(".png", frame, buffer);
         Image imageToShow = new Image(new ByteArrayInputStream(buffer.toArray()));
        
-        // run it in the main Thread
+        
         Platform.runLater((Runnable) () -> imageView.setImage(imageToShow));
     }
 
