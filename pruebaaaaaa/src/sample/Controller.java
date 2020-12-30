@@ -28,6 +28,7 @@ import org.opencv.highgui.HighGui;
 import org.opencv.imgcodecs.Imgcodecs;
 import org.opencv.imgproc.Imgproc;
 import ayuda.AyudaSoporteController;
+import camara.WebCamCapture;
         
         
 public class Controller {
