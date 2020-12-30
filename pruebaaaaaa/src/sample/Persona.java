@@ -11,7 +11,7 @@ package sample;
  */
 public class Persona {
     
-     private String nombre;
+    private String nombre;
     private String descripcion;
     private String fechaNacimiento;
     private String sexo;

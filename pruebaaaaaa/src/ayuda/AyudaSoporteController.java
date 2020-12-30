@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package sample;
+package ayuda;
 
 import java.io.IOException;
 import java.net.URL;
@@ -17,6 +17,8 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
 
@@ -29,16 +31,12 @@ public class AyudaSoporteController implements Initializable {
     
     
     @FXML
-    private Button inicio;
-    
+    private Button botonInicio;
     @FXML
-    private Button rostros;
-    
+    private TextField problema;
     @FXML
-    private Button patrones;
+    private TextArea descripcion;
     
-    @FXML
-    private Button enviar;
 
     /**
      * Initializes the controller class.
@@ -53,19 +51,8 @@ public class AyudaSoporteController implements Initializable {
         cambioEscena("sample.fxml");
     }
     
-    @FXML
-    private void irRostros(ActionEvent event) throws IOException {
-        cambioEscena("rostros.fxml");
-    }
-    
-    @FXML
-    private void irPatrones(ActionEvent event) throws IOException {
-        cambioEscena("patrones.fxml");
-    }
-    
-    
     public void cambioEscena(String nombreFxml) throws IOException{
-        Stage stage2 = (Stage) this.inicio.getScene().getWindow();
+        Stage stage2 = (Stage) this.botonInicio.getScene().getWindow();
         stage2.close();
         Stage stage = new Stage();
         Parent root2 = FXMLLoader.load(getClass().getResource(nombreFxml));

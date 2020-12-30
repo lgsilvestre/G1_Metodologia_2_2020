@@ -5,6 +5,7 @@
  */
 package sample;
 
+import baseDeDatos.guardadoGson;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.FileWriter;
